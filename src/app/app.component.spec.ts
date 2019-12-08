@@ -3,8 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { GameIntroComponent } from './game-intro/game-intro.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { GameIntroDialogComponent } from './game-intro-dialog/game-intro-dialog.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -16,7 +16,7 @@ describe('AppComponent', () => {
             ],
             declarations: [
                 AppComponent,
-                GameIntroComponent
+                GameIntroDialogComponent
             ]
         }).compileComponents();
     }));
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
         expect(app).toBeTruthy();
     });
 
-    it(`should have as title 'sw-game'`, () => {
+    it(`should have as title 'Star Wars Battle'`, () => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.debugElement.componentInstance;
         expect(app.title).toEqual('Star Wars Battle');
@@ -38,6 +38,6 @@ describe('AppComponent', () => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('.select-battle')
-            .textContent).toContain('Choose battle');
+            .textContent).toContain('Choose sources');
     });
 });

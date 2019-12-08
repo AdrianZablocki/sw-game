@@ -1,9 +1,10 @@
 <h1>{{ title }}</h1>
 
-<!-- <mat-card>card</mat-card> -->
-<button mat-raised-button (click)="openDialog()">Pick one</button>
-
-<!-- <game-intro (charactersBattle)="getCharacters()" (starshipsBattle)="getStarships()">
-</game-intro> -->
+<button *ngIf="!isResourceChoosen; else choosenResource" class="select-battle" mat-raised-button (click)="openDialog()">
+    Choose sources
+</button>
+<ng-template #choosenResource>
+    {{choosenBattle}}
+</ng-template>
 
 <router-outlet></router-outlet>

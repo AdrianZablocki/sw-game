@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-// import { map } from 'rxjs/operators';
-
-
-import { DataService } from './services/data-service/data.service';
 import { MatDialog } from '@angular/material/dialog';
 
-import { GameIntroDialogComponent } from './game-intro/game-intro-dialog/game-intro-dialog.component';
+import { DataService } from './services/data-service/data.service';
+import { GameIntroDialogComponent } from './game-intro-dialog/game-intro-dialog.component';
 
 @Component({
     selector: 'app-root',
@@ -14,32 +11,44 @@ import { GameIntroDialogComponent } from './game-intro/game-intro-dialog/game-in
 })
 export class AppComponent {
     public title: string = 'Star Wars Battle';
+    public isResourceChoosen: boolean = false;
+    public choosenBattle: string;
 
     constructor(
         private dataService: DataService,
         private dialog: MatDialog
     ) { }
 
-    private getStarships() {
+    private getStarships(): any {
         return this.dataService.getStarships().subscribe(data => console.log(data));
     }
 
-    private getCharacters() {
+    private getCharacters(): any {
         return this.dataService.getCharacters().subscribe(data => console.log(data));
+    }
+
+    private setStartGame(battleType: string): void {
+        this.choosenBattle = battleType;
+        this.isResourceChoosen = true;
     }
 
     public openDialog(): void {
         const dialogRef = this.dialog.open(GameIntroDialogComponent, {
-            width: '250px',
+            width: '300px',
             data: { characterResource: 'characters', starshipsResource: 'starships' }
         });
 
         dialogRef.afterClosed().subscribe(result => {
-
             const cards = {
-                characters: () => this.getCharacters(),
-                starships: () => this.getStarships(),
-                undefined: () => console.log('nothing choosen')
+                characters: () => {
+                    this.setStartGame(result);
+                    this.getCharacters();
+                },
+                starships: () => {
+                    this.setStartGame(result);
+                    this.getStarships();
+                },
+                undefined: () => this.isResourceChoosen = false
             }
             return cards[result]();
         });
