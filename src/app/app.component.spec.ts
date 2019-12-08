@@ -3,16 +3,20 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { GameIntroComponent } from './game-intro/game-intro.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
                 RouterTestingModule,
-                HttpClientModule
+                HttpClientModule,
+                MatDialogModule
             ],
             declarations: [
-                AppComponent
+                AppComponent,
+                GameIntroComponent
             ]
         }).compileComponents();
     }));

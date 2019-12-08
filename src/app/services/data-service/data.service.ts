@@ -21,7 +21,7 @@ export class DataService {
         return this.http.get(`${API.starships}${this.setRandomPage(starshipPage)}`)
     }
 
-    public getPeople(): Observable<any> {
-        return this.http.get(`${API.people}${this.setRandomPage(peoplePage)}`)
+    public getCharacters(): Observable<any> {
+        return this.http.get(`${API.characters}${this.setRandomPage(peoplePage)}`)
     }
 }
