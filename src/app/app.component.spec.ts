@@ -1,16 +1,19 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                RouterTestingModule
+                RouterTestingModule,
+                HttpClientModule
             ],
             declarations: [
                 AppComponent
-            ],
+            ]
         }).compileComponents();
     }));
 
@@ -23,13 +26,14 @@ describe('AppComponent', () => {
     it(`should have as title 'sw-game'`, () => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.debugElement.componentInstance;
-        expect(app.title).toEqual('sw-game');
+        expect(app.title).toEqual('Star Wars Battle');
     });
 
     it('should render title', () => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('span').textContent).toContain('sw-game app is running!');
+        expect(compiled.querySelector('.select-battle')
+            .textContent).toContain('Choose battle');
     });
 });

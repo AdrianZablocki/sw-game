@@ -1,5 +1,14 @@
-<div>
-    <span routerLink="/game">{{ title }} app is running!</span>
-</div>
+<h1>{{ title }}</h1>
 
+<div class="select-battle">Choose battle</div>
+
+<button mat-raised-button color="primary" (click)="getPeople()" routerLink="/game">
+    characters battle
+</button>
+
+<button mat-raised-button color="warn" (click)="getStarships()" routerLink="/game">
+    starships battle
+</button>
+
+<!-- <mat-card>card</mat-card> -->
 <router-outlet></router-outlet>
