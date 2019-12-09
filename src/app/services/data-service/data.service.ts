@@ -45,6 +45,11 @@ export class DataService {
     }
 
     public getCharacters(): Observable<any> {
-        return this.http.get(`${API.characters}${this.setRandomPage(peoplePage)}`);
+        return this.http.get(`${API.characters}${this.setRandomPage(peoplePage)}`).pipe(
+            map((res: IData): ICard[] => {
+                console.log(res.results);
+                return this.shufleCards(res.results).slice(0, this.cards);
+            })
+        );
     }
 }
