@@ -1,13 +1,16 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-game',
     templateUrl: './game.component.html',
-    styleUrls: ['./game.component.scss']
+    styleUrls: ['./game.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GameComponent {
-    @Output() public clicked: EventEmitter<any> = new EventEmitter<any>();
     @Input() private battleType: string;
+
+    @Output() public clicked: EventEmitter<any> = new EventEmitter<any>();
+    @Input() public isLoading = false;
 
     public isClicked = false;
 

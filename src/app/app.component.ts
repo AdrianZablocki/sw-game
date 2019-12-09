@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { DataService } from './services/data-service/data.service';
@@ -12,18 +12,31 @@ import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dial
 export class AppComponent {
     public title = 'Star Wars Battle';
     public choosenBattle: string;
+    public isLoading = false;
 
     constructor(
         private dataService: DataService,
-        private dialog: MatDialog
+        private dialog: MatDialog,
+        private changeDetector: ChangeDetectorRef
     ) { }
 
     private getStarships(): any {
-        return this.dataService.getStarships().subscribe(data => console.log('result', data));
+        return this.dataService.getStarships().subscribe(data => {
+            console.log('result', data);
+            this.markAsFetched();
+        });
     }
 
     private getCharacters(): any {
-        return this.dataService.getCharacters().subscribe(data => console.log(data));
+        return this.dataService.getCharacters().subscribe(data => {
+            console.log(data);
+            this.markAsFetched();
+        });
+    }
+
+    private markAsFetched(): void {
+        this.isLoading = false;
+        this.changeDetector.markForCheck();
     }
 
     public openDialog(): void {
@@ -35,6 +48,7 @@ export class AppComponent {
     }
 
     public getCards(battleType: string): void {
+        this.isLoading = true;
         const cards = {
             characters: () => this.getCharacters(),
             starships: () => this.getStarships(),

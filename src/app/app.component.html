@@ -6,10 +6,9 @@
 
 <ng-template #choosenResource>
 
-    <div>{{choosenBattle}}</div>
+    <div>{{ choosenBattle }}</div>
     <div class="game-container">
-        <app-game (clicked)="getCards($event)" [battleType]="choosenBattle"></app-game>
+        <app-game (clicked)="getCards($event)" [battleType]="choosenBattle" [isLoading]="isLoading"></app-game>
     </div>
-
 
 </ng-template>
