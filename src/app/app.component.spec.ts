@@ -1,22 +1,22 @@
 import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { GameIntroDialogComponent } from './game-intro-dialog/game-intro-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dialog.component';
+import { GameComponent } from './game/game.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                RouterTestingModule,
                 HttpClientModule,
                 MatDialogModule
             ],
             declarations: [
                 AppComponent,
-                GameIntroDialogComponent
+                GameIntroDialogComponent,
+                GameComponent
             ]
         }).compileComponents();
     }));

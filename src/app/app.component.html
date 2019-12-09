@@ -1,10 +1,15 @@
 <h1>{{ title }}</h1>
 
-<button *ngIf="!isResourceChoosen; else choosenResource" class="select-battle" mat-raised-button (click)="openDialog()">
+<button *ngIf="!choosenBattle; else choosenResource" class="select-battle" mat-raised-button (click)="openDialog()">
     Choose sources
 </button>
-<ng-template #choosenResource>
-    {{choosenBattle}}
-</ng-template>
 
-<router-outlet></router-outlet>
+<ng-template #choosenResource>
+
+    <div>{{choosenBattle}}</div>
+    <div class="game-container">
+        <app-game (clicked)="getCards($event)" [battleType]="choosenBattle"></app-game>
+    </div>
+
+
+</ng-template>

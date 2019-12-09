@@ -7,7 +7,7 @@ export interface DialogData {
 }
 
 @Component({
-    selector: 'game-intro-dialog',
+    selector: 'app-intro-dialog',
     templateUrl: './game-intro-dialog.component.html',
 })
 export class GameIntroDialogComponent {
