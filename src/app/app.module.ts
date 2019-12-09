@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 import { DataService } from './services/data-service/data.service';
 import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dialog.component';
+import { LoaderComponent } from './UI/loader/loader.component';
+import { LoaderIconComponent } from './UI/loader-icon/loader-icon.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dial
     declarations: [
         AppComponent,
         GameComponent,
-        GameIntroDialogComponent
+        GameIntroDialogComponent,
+        LoaderComponent,
+        LoaderIconComponent
     ],
     imports: [
         BrowserModule,

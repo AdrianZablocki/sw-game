@@ -1,0 +1,90 @@
+/* *
+ * ROOT FONT SIZE
+ */
+$px-root: 16px;
+
+/* *
+  * COLORS
+  */
+$black: rgb(0, 0, 0);
+$black-light: rgb(26, 27, 32);
+$black-transparent-15: transparentize($black, 0.85);
+
+$blue: rgb(15, 82, 186);
+$blue-light: rgb(101, 155, 255);
+
+$gray: rgb(100, 100, 100);
+$gray-light: rgb(190, 190, 190);
+$gray-light-transparent-25: transparentize($gray-light, 0.75);
+$gray-light-transparent-10: transparentize($gray, 0.9);
+
+$white: rgb(255, 255, 255);
+$white-transparent-90: transparentize($white, 0.1);
+$white-dark: rgb(231, 231, 231);
+
+/* *
+  * PX TO REM CALCULATOR
+  */
+@function parseInt($n) {
+	@return $n / ($n * 0 + 1);
+}
+
+@function rem($values) {
+	$rem: ();
+
+	@each $value in $values {
+		$value: if($value != 0, $value / parseInt($px-root) + rem, 0);
+		$rem: append($rem, ($value));
+	}
+
+	@return $rem;
+}
+
+/* *
+  * BORDERS
+  */
+$border-radius-small: rem(4);
+$border-radius-medium: rem(12);
+$border-radius-large: rem(20);
+$drop-link-border: rem(22);
+
+/* *
+  * Z-index
+  */
+// List of core elements used in project
+$list: basic;
+
+// Return z-index of element from list, return null if there is no element
+@function z-index($list, $element) {
+	$z-index: index($list, $element);
+
+	@if $z-index {
+		@return $z-index;
+	}
+
+	@return null;
+}
+
+/* *
+  * RWD
+  */
+$rwd-break-small: 768px;
+
+/* *
+  * MEDIA QUERIES FOR DEVICES
+  */
+@mixin tablet-up {
+	@media only screen and (min-width: #{$rwd-break-small}) {
+		@content;
+	}
+}
+
+@mixin device($devices) {
+	@each $device in $devices {
+		@if $device == "tablet-up" {
+			@include tablet-up {
+				@content;
+			}
+		}
+	}
+}

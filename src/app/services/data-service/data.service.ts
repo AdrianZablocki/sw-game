@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { API, peoplePage, starshipPage } from 'src/config';
-import { map } from 'rxjs/operators';
 import { ICard, IData } from 'src/app/Models';
 
 @Injectable({

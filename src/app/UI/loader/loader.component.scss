@@ -1,0 +1,30 @@
+@import "../../../styles/variables";
+
+// parent needs position: relative/absolute/fixed
+:host {
+	// trick to stretch to full parent size
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: $black-light;
+	z-index: z-index($list, loader);
+
+	@include device(tablet-up) {
+		background: $white-transparent-90;
+	}
+}
+
+.text-under {
+	margin-top: rem(10);
+	color: $gray-light;
+
+	@include device(tablet-up) {
+		color: $blue-light;
+	}
+}
+
+.loader-icon {
+	width: rem(90);
+	height: rem(90);
+}

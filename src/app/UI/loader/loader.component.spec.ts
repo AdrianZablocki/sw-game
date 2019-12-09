@@ -1,24 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { GameComponent } from './game.component';
-import { LoaderComponent } from '../UI/loader/loader.component';
-import { LoaderIconComponent } from '../UI/loader-icon/loader-icon.component';
+import { LoaderComponent } from './loader.component';
+import { LoaderIconComponent } from '../loader-icon/loader-icon.component';
 
-describe('GameComponent', () => {
-    let component: GameComponent;
-    let fixture: ComponentFixture<GameComponent>;
+describe('LoaderComponent', () => {
+    let component: LoaderComponent;
+    let fixture: ComponentFixture<LoaderComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [BrowserAnimationsModule],
-            declarations: [GameComponent, LoaderComponent, LoaderIconComponent]
+            declarations: [LoaderComponent, LoaderIconComponent]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(GameComponent);
+        fixture = TestBed.createComponent(LoaderComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

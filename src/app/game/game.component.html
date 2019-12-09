@@ -1,1 +1,5 @@
-<button *ngIf="!isClicked" mat-button (click)="onClick()">click</button>
+<button *ngIf="!isClicked; else gameBoard" mat-button (click)="onClick()">click</button>
+
+<ng-template #gameBoard>
+    <app-loader></app-loader>
+</ng-template>

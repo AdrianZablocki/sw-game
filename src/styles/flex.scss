@@ -1,0 +1,98 @@
+/* *
+ * FLEX CLASSES
+ */
+%flex,
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&--align-top {
+		align-items: flex-start;
+	}
+
+	&--stretch-items {
+		align-items: stretch;
+	}
+
+	&--baseline {
+		align-items: baseline;
+	}
+
+	&--justify-start {
+		justify-content: flex-start;
+	}
+}
+
+.flex-column {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	&--justify-between {
+		justify-content: space-between;
+	}
+}
+
+%justify-start,
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.align-start {
+	align-items: flex-start;
+}
+
+.align-end {
+	align-items: flex-end;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.align-self-center {
+	align-self: center;
+}
+
+.align-self-baseline {
+	align-self: baseline;
+}
+
+.align-self-end {
+	align-self: flex-end;
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

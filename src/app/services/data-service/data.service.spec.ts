@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DataService } from './data.service';
-import { HttpClientModule } from '@angular/common/http';
 
 describe('DataService', () => {
     beforeEach(() => TestBed.configureTestingModule({
