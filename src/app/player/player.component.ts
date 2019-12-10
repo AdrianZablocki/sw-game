@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 import { ICard } from '../Models';
 
@@ -7,7 +7,7 @@ import { ICard } from '../Models';
     templateUrl: './player.component.html',
     styleUrls: ['./player.component.scss']
 })
-export class PlayerComponent implements OnInit {
+export class PlayerComponent {
     @Input() private battleType: string;
     @Input() private player: string;
 
@@ -17,9 +17,6 @@ export class PlayerComponent implements OnInit {
     public isClicked = false;
 
     constructor() { }
-
-    ngOnInit() {
-    }
 
     public selectCards(): void {
         this.clicked.emit({ type: this.battleType, player: this.player });

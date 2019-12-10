@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+:host {
+	position: relative;
+	width: 100%;
+
+	@include device(tablet-up) {
+		width: 80%;
+	}
+}
+
+.card {
+	margin: rem(10);
+	// background: url("../../assets/images/cover.jpg") center center no-repeat;
+	// background-size: cover;
+
+	&__header {
+		border-bottom: 1px solid #ccc;
+	}
+	&__image {
+		background: url("../../assets/images/fight.jpeg") center center no-repeat;
+		background-size: cover;
+	}
+
+	&__content {
+		padding-top: rem(5);
+	}
+}

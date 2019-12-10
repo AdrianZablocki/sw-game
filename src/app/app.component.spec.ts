@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dialog.component';
@@ -8,13 +9,15 @@ import { GameComponent } from './game/game.component';
 import { LoaderComponent } from './UI/loader/loader.component';
 import { LoaderIconComponent } from './UI/loader-icon/loader-icon.component';
 import { PlayerComponent } from './player/player.component';
+import { CardComponent } from './card/card.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
                 HttpClientModule,
-                MatDialogModule
+                MatDialogModule,
+                MatCardModule
             ],
             declarations: [
                 AppComponent,
@@ -22,7 +25,8 @@ describe('AppComponent', () => {
                 GameComponent,
                 LoaderComponent,
                 LoaderIconComponent,
-                PlayerComponent
+                PlayerComponent,
+                CardComponent
             ]
         }).compileComponents();
     }));

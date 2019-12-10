@@ -13,6 +13,7 @@ import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dial
 import { LoaderComponent } from './UI/loader/loader.component';
 import { LoaderIconComponent } from './UI/loader-icon/loader-icon.component';
 import { PlayerComponent } from './player/player.component';
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PlayerComponent } from './player/player.component';
         GameIntroDialogComponent,
         LoaderComponent,
         LoaderIconComponent,
-        PlayerComponent
+        PlayerComponent,
+        CardComponent
     ],
     imports: [
         BrowserModule,

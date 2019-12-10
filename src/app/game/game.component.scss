@@ -1,0 +1,9 @@
+@import "../../styles/variables";
+
+.game-container {
+	flex-direction: column;
+
+	@include device(tablet-up) {
+		flex-direction: row;
+	}
+}
