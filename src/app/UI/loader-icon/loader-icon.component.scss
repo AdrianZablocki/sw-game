@@ -62,13 +62,13 @@
 	height: 40px;
 	border-radius: 50%;
 	border: 4px solid $white;
-	border-color: $blue transparent $blue transparent;
+	border-color: $purple transparent $purple transparent;
 	animation: lds-double-ring 1.6s linear infinite;
 }
 
 .lds-double-ring div:nth-child(2) {
 	width: 28px;
 	height: 28px;
-	border-color: transparent $blue-light transparent $blue-light;
+	border-color: transparent $orange-dark transparent $orange-dark;
 	animation: lds-double-ring_reverse 1.6s linear infinite;
 }

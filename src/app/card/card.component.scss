@@ -1,6 +1,5 @@
 @import "../../styles/variables";
 :host {
-	position: relative;
 	width: 100%;
 
 	@include device(tablet-up) {
@@ -9,9 +8,38 @@
 }
 
 .card {
-	margin: rem(10);
-	// background: url("../../assets/images/cover.jpg") center center no-repeat;
-	// background-size: cover;
+	position: relative;
+	margin: rem(5);
+	user-select: none;
+	text-align: center;
+	transition: $card-transition;
+	transform-style: preserve-3d;
+	cursor: pointer;
+
+	&__front,
+	&__back {
+		backface-visibility: hidden;
+		transition: $card-transition;
+	}
+
+	&__front {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 4px;
+		background: url("../../assets/images/cover.jpg") center center no-repeat;
+		background-size: cover;
+		cursor: pointer;
+	}
+
+	&__back {
+		transform: rotateY(180deg);
+	}
 
 	&__header {
 		border-bottom: 1px solid #ccc;
@@ -21,7 +49,26 @@
 		background-size: cover;
 	}
 
+	&__title,
+	&__subtitle {
+		text-align: left;
+	}
+
 	&__content {
+		text-align: left;
 		padding-top: rem(5);
+	}
+
+	&.opened {
+		transform: $transform-180;
+	}
+}
+
+@keyframes selected {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

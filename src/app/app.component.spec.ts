@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dialog.component';
@@ -17,7 +18,8 @@ describe('AppComponent', () => {
             imports: [
                 HttpClientModule,
                 MatDialogModule,
-                MatCardModule
+                MatCardModule,
+                MatButtonModule
             ],
             declarations: [
                 AppComponent,

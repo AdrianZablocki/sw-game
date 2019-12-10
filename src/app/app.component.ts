@@ -3,12 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { DataService } from './services/data-service/data.service';
 import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dialog.component';
-import { ICard } from './Models';
-
-enum Players {
-    PLAYER_ONE = 'Player One',
-    PLAYER_TWO = 'Player Two',
-}
+import { ICard, Players } from './Models';
 
 @Component({
     selector: 'app-root',
