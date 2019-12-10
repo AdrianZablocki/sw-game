@@ -52,7 +52,7 @@ $drop-link-border: rem(22);
   * Z-index
   */
 // List of core elements used in project
-$list: basic;
+$list: basic, loader;
 
 // Return z-index of element from list, return null if there is no element
 @function z-index($list, $element) {

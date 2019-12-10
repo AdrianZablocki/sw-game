@@ -1,0 +1,14 @@
+<button *ngIf="!isClicked" mat-button (click)="selectCards()">click</button>
+
+<div class="flex">
+    <div *ngFor="let card of cards" class="card">
+        <div>{{ card.name }}</div>
+        <div>{{ card.manufacturer }}</div>
+        <div>{{ card.passengers }}</div>
+        <div>{{ card.starship_class }}</div>
+        <div>{{ card.max_atmosphering_speed }}</div>
+        <div>{{ card.length }}</div>
+        <div>{{ card.crew }}</div>
+        <div>{{ card.hyperdrive_rating }}</div>
+    </div>
+</div>

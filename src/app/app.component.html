@@ -7,8 +7,16 @@
 <ng-template #choosenResource>
 
     <div>{{ choosenBattle }}</div>
+
     <div class="game-container">
-        <app-game (clicked)="getCards($event)" [battleType]="choosenBattle" [isLoading]="isLoading"></app-game>
+        <app-game [isLoading]="isLoading">
+            <app-player playerOne [player]="'Player One'" [cards]="playerOneCards" [battleType]="choosenBattle"
+                (clicked)="getCards($event)">
+            </app-player>
+            <app-player playerTwo [player]="'Player Two'" [cards]="playerTwoCards" [battleType]="choosenBattle"
+                (clicked)="getCards($event)">
+            </app-player>
+        </app-game>
     </div>
 
 </ng-template>

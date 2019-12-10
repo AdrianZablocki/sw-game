@@ -7,6 +7,7 @@ import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dial
 import { GameComponent } from './game/game.component';
 import { LoaderComponent } from './UI/loader/loader.component';
 import { LoaderIconComponent } from './UI/loader-icon/loader-icon.component';
+import { PlayerComponent } from './player/player.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -20,7 +21,8 @@ describe('AppComponent', () => {
                 GameIntroDialogComponent,
                 GameComponent,
                 LoaderComponent,
-                LoaderIconComponent
+                LoaderIconComponent,
+                PlayerComponent
             ]
         }).compileComponents();
     }));

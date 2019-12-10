@@ -1,5 +1,5 @@
-<button *ngIf="!isClicked; else gameBoard" mat-button (click)="onClick()">click</button>
-
-<ng-template #gameBoard>
-    <app-loader *ngIf="isLoading"></app-loader>
-</ng-template>
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="flex">
+    <ng-content select=[playerOne]></ng-content>
+    <ng-content select=[playerTwo]></ng-content>
+</div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-game',
@@ -7,17 +7,7 @@ import { Component, EventEmitter, Output, Input, ChangeDetectionStrategy } from 
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GameComponent {
-    @Input() private battleType: string;
-
-    @Output() public clicked: EventEmitter<any> = new EventEmitter<any>();
     @Input() public isLoading = false;
 
-    public isClicked = false;
-
     constructor() { }
-
-    public onClick(): void {
-        this.clicked.emit(this.battleType);
-        this.isClicked = true;
-    }
 }

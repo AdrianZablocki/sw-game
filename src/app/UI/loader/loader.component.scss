@@ -1,8 +1,9 @@
 @import "../../../styles/variables";
 
-// parent needs position: relative/absolute/fixed
 :host {
-	// trick to stretch to full parent size
+	position: absolute;
+	display: flex;
+	justify-content: center;
 	top: 0;
 	right: 0;
 	bottom: 0;

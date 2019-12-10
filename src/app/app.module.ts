@@ -12,6 +12,7 @@ import { DataService } from './services/data-service/data.service';
 import { GameIntroDialogComponent } from './UI/game-intro-dialog/game-intro-dialog.component';
 import { LoaderComponent } from './UI/loader/loader.component';
 import { LoaderIconComponent } from './UI/loader-icon/loader-icon.component';
+import { PlayerComponent } from './player/player.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { LoaderIconComponent } from './UI/loader-icon/loader-icon.component';
         GameComponent,
         GameIntroDialogComponent,
         LoaderComponent,
-        LoaderIconComponent
+        LoaderIconComponent,
+        PlayerComponent
     ],
     imports: [
         BrowserModule,
