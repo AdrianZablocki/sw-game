@@ -4,41 +4,29 @@
 $px-root: 16px;
 
 /* *
-  * COLORS
-  */
+ * FONT WEIGHT
+ */
+$font-weight-300: 300;
+
+/* *
+* TEXT:
+*/
+$text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+
+/* *
+* COLORS
+*/
 $black: rgb(0, 0, 0);
-$black-light: rgb(26, 27, 32);
-$black-transparent-15: transparentize($black, 0.85);
-
-$blue: rgb(15, 82, 186);
-$blue-light: rgb(101, 155, 255);
-
-$gray: rgb(100, 100, 100);
-$gray-light: rgb(190, 190, 190);
-$gray-light-transparent-25: transparentize($gray-light, 0.75);
-$gray-light-transparent-10: transparentize($gray, 0.9);
-
 $white: rgb(255, 255, 255);
 $white-transparent-90: transparentize($white, 0.1);
-$white-dark: rgb(231, 231, 231);
-
-$gray-light: #f4f5f7;
-
 $purple: rgb(103, 58, 183);
-
 $orange-dark: rgb(244, 67, 54);
 
 /* *
 * TRANSITION:
 */
-// $transition-standard: all 0.2s ease-in;
 $card-transition: 0.6s;
 $transform-180: rotateY(180deg);
-
-/* *
-* BORDERS:
-*/
-$border-radius-10: 10px;
 
 /* *
   * PX TO REM CALCULATOR
@@ -59,18 +47,16 @@ $border-radius-10: 10px;
 }
 
 /* *
-  * BORDERS
-  */
+* BORDERS:
+*/
 $border-radius-small: rem(4);
-$border-radius-medium: rem(12);
-$border-radius-large: rem(20);
-$drop-link-border: rem(22);
+$border-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 
 /* *
   * Z-index
   */
 // List of core elements used in project
-$list: basic, loader;
+$list: basic, layer, loader;
 
 // Return z-index of element from list, return null if there is no element
 @function z-index($list, $element) {
@@ -86,7 +72,7 @@ $list: basic, loader;
 /* *
   * RWD
   */
-$rwd-break-small: 768px;
+$rwd-break-small: 700px;
 
 /* *
   * MEDIA QUERIES FOR DEVICES

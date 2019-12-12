@@ -1,4 +1,10 @@
 <app-loader *ngIf="isLoading"></app-loader>
+
+<div class="flex justify-around game-points">
+    <div>Player One: {{ playerOneScore || 0 }}</div>
+    <div>Player Two: {{ playerTwoScore || 0 }}</div>
+</div>
+
 <div class="flex game-container">
     <ng-content select=[playerOne]></ng-content>
     <ng-content select=[playerTwo]></ng-content>

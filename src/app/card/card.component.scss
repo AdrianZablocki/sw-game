@@ -12,6 +12,7 @@
 	margin: rem(5);
 	user-select: none;
 	text-align: center;
+	text-shadow: none;
 	transition: $card-transition;
 	transform-style: preserve-3d;
 	cursor: pointer;
@@ -31,10 +32,9 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		border-radius: 4px;
-		background: url("../../assets/images/cover.jpg") center center no-repeat;
-		background-size: cover;
-		cursor: pointer;
+		border-radius: $border-radius-small;
+		box-shadow: $border-shadow;
+		background: $white;
 	}
 
 	&__back {

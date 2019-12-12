@@ -9,5 +9,15 @@
 }
 
 .player-cards {
+	position: relative;
 	padding: rem(10);
+
+	&__layer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: z-index($list, layer);
+	}
 }

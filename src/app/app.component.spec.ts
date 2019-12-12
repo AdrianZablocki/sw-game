@@ -39,10 +39,10 @@ describe('AppComponent', () => {
         expect(app).toBeTruthy();
     });
 
-    it(`should have as title 'Star Wars Battle'`, () => {
+    it(`should have as title 'Star Wars'`, () => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.debugElement.componentInstance;
-        expect(app.title).toEqual('Star Wars Battle');
+        expect(app.title).toEqual('Star Wars');
     });
 
     it('should render title', () => {
@@ -50,6 +50,6 @@ describe('AppComponent', () => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('.select-battle')
-            .textContent).toContain('Choose sources');
+            .textContent).toContain('Choose resources');
     });
 });

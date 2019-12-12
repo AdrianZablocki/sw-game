@@ -10,14 +10,15 @@ export class Card {
     birthYear: string;
 
     constructor(obj?: any) {
-        this.name = obj && obj.name || null;
-        this.crew = obj && obj.crew || null;
-        this.starshipClass = obj && obj.starship_class || null;
-        this.maxAtmospheringSpeed = obj && obj.max_atmosphering_speed || null;
-        this.manufacturer = obj && obj.manufacturer || null;
-        this.mass = obj && obj.mass || null;
-        this.height = obj && obj.height || null;
-        this.gender = obj && obj.gender || null;
-        this.birthYear = obj && obj.birth_year || null;
+        this.name = obj && obj.name;
+        this.crew = obj && (obj.crew === 'unknown' ? '20' : obj.crew);
+        this.starshipClass = obj && obj.starship_class;
+        this.maxAtmospheringSpeed = obj &&
+            (obj.max_atmosphering_speed === 'unknown' || obj.max_atmosphering_speed === 'n/a' ? '1200' : obj.max_atmosphering_speed);
+        this.manufacturer = obj && obj.manufacturer;
+        this.mass = obj && (obj.mass === 'unknown' ? '80' : obj.mass);
+        this.height = obj && (obj.height === 'unknown' ? '170' : obj.height);
+        this.gender = obj && obj.gender;
+        this.birthYear = obj && obj.birth_year;
     }
 }

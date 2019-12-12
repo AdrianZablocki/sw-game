@@ -10,19 +10,11 @@
 	left: 0;
 	background: $white-transparent-90;
 	z-index: z-index($list, loader);
-
-	// @include device(tablet-up) {
-	// 	background: $white-transparent-90;
-	// }
 }
 
 .text-under {
 	margin-top: rem(10);
 	color: $orange-dark;
-
-	// @include device(tablet-up) {
-	// 	color: $blue-light;
-	// }
 }
 
 .loader-icon {

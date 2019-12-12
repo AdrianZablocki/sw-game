@@ -38,7 +38,6 @@ export class DataService {
     public getStarships(): Observable<ICard[]> {
         return this.http.get(`${API.starships}${this.setRandomPage(starshipPage)}`).pipe(
             map((res: IData): ICard[] => {
-                console.log(res.results);
                 return this.shufleCards(res.results).slice(0, this.cards);
             })
         );
@@ -47,7 +46,6 @@ export class DataService {
     public getCharacters(): Observable<any> {
         return this.http.get(`${API.characters}${this.setRandomPage(peoplePage)}`).pipe(
             map((res: IData): ICard[] => {
-                console.log(res.results);
                 return this.shufleCards(res.results).slice(0, this.cards);
             })
         );

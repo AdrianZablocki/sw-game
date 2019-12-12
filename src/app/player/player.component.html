@@ -1,6 +1,10 @@
-<button *ngIf="!isClicked" mat-button (click)="selectCards()">click</button>
+<button mat-raised-button [color]="player === playerOne ? 'warn' : 'primary'" *ngIf="!isClicked"
+    (click)="selectCards()">
+    Select cards
+</button>
 
 <div class="flex-column player-cards">
-    <app-card *ngFor=" let card of cards" [card]="card" [player]="player">
+    <div *ngIf="isSelected" class="player-cards__layer"></div>
+    <app-card *ngFor=" let card of cards" [card]="card" [player]="player" (selected)="selectCard($event)">
     </app-card>
 </div>

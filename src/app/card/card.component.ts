@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Card, Players } from '../Models';
 
 
@@ -8,25 +8,23 @@ import { Card, Players } from '../Models';
     styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+    @Output() public selected: EventEmitter<Card> = new EventEmitter<Card>();
     @Input() public card: Card;
     @Input() public player: string;
 
     public playerOne: Players = Players.PLAYER_ONE;
-    // public isDisabled: boolean = false;
 
     public isSelected = false;
 
     constructor() { }
 
     ngOnInit() {
-        console.log(this.player);
         this.card = new Card(this.card);
     }
 
 
-    public selectCard(card: any): void {
-        // this.isDisabled = true;
+    public selectCard(card: Card): void {
         this.isSelected = true;
-        console.log(card);
+        this.selected.emit(card);
     }
 }

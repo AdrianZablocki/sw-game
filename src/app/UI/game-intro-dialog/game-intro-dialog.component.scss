@@ -1,0 +1,16 @@
+@import "../../../styles/variables";
+
+.dialog {
+	&__header {
+		text-align: center;
+		margin-bottom: rem(30);
+	}
+
+	&__button {
+		margin-bottom: rem(15);
+	}
+}
+
+.winner {
+	margin-bottom: rem(15);
+}

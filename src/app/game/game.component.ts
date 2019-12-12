@@ -1,4 +1,11 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import {
+    Component,
+    Input,
+    ChangeDetectionStrategy,
+    OnChanges,
+    Output,
+    EventEmitter
+} from '@angular/core';
 
 @Component({
     selector: 'app-game',
@@ -6,8 +13,18 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./game.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GameComponent {
+export class GameComponent implements OnChanges {
+    @Output() private roundEnd: EventEmitter<boolean> = new EventEmitter<false>();
+
     @Input() public isLoading = false;
+    @Input() public playerOneScore: number;
+    @Input() public playerTwoScore: number;
 
     constructor() { }
+
+    public ngOnChanges(): void {
+        if (this.playerOneScore && this.playerTwoScore) {
+            this.roundEnd.emit(true);
+        }
+    }
 }

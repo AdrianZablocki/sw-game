@@ -1,22 +1,29 @@
-<h1>{{ title }}</h1>
+<h1 class="flex-column app__title">
+    {{ title }}
+    <div class="app__subtitle">{{ choosenBattle }} battle</div>
+</h1>
 
 <button *ngIf="!choosenBattle; else choosenResource" class="select-battle" mat-raised-button (click)="openDialog()">
-    Choose sources
+    Choose resources
 </button>
 
 <ng-template #choosenResource>
 
-    <div>{{ choosenBattle }}</div>
-
     <div class="game-container">
-        <app-game [isLoading]="isLoading">
+
+        <app-game [isLoading]="isLoading" [playerOneScore]="playerOneTotalScore" [playerTwoScore]="playerTwoTotalScore"
+            (roundEnd)="checkWinner()">
+
             <app-player playerOne [player]="'Player One'" [cards]="playerOneCards" [battleType]="choosenBattle"
-                (clicked)="getCards($event)">
+                [isEndGame]="roundEnd" (score)="setScore($event)" (clicked)="getCards($event)">
             </app-player>
+
             <app-player playerTwo [player]="'Player Two'" [cards]="playerTwoCards" [battleType]="choosenBattle"
-                (clicked)="getCards($event)">
+                [isEndGame]="roundEnd" (score)="setScore($event)" (clicked)="getCards($event)">
             </app-player>
+
         </app-game>
+
     </div>
 
 </ng-template>

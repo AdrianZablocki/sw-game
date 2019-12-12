@@ -1,4 +1,4 @@
-<div class="card" [class.opened]="isSelected" (click)="selectCard(card)">
+<div class="card" [class.opened]="isSelected">
 
     <div class="card__front">
         <button mat-raised-button [color]="player === playerOne ? 'warn' : 'primary'" (click)="selectCard(card)">
@@ -6,7 +6,7 @@
         </button>
     </div>
 
-    <mat-card class="card__back">
+    <mat-card class=" card__back">
 
         <mat-card-header class="card__header">
             <div mat-card-avatar class="card__image"></div>
@@ -20,6 +20,7 @@
                 <mat-card-subtitle *ngIf="card.crew || card.maxAtmospheringSpeed" class="card__subtitle">
                     crew: {{ card.crew }}, speed: {{ card.maxAtmospheringSpeed }}
                 </mat-card-subtitle>
+
             </div>
         </mat-card-header>
 

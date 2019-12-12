@@ -9,6 +9,7 @@ export interface DialogData {
 @Component({
     selector: 'app-intro-dialog',
     templateUrl: './game-intro-dialog.component.html',
+    styleUrls: ['./game-intro-dialog.component.scss']
 })
 export class GameIntroDialogComponent {
 
@@ -16,4 +17,8 @@ export class GameIntroDialogComponent {
         public dialogRef: MatDialogRef<GameIntroDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: DialogData
     ) { }
+
+    public reloadGame(): void {
+        window.location.reload();
+    }
 }
