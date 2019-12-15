@@ -1,8 +1,8 @@
-# Star Wars Battle app
+# Star Wars Battle
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-### Installation
+## Installation
 
 1. git clone https://github.com/AdrianZablocki/sw-game.git
 2. cd sw-game
