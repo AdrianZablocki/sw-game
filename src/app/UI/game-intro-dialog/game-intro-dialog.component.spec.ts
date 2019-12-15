@@ -25,6 +25,19 @@ describe('GameIntroDialogComponent', () => {
         fixture.detectChanges();
     });
 
+
+    it(`should have choose characters button`, () => {
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.dialog__button--characters')
+            .textContent).toContain('characters battle');
+    });
+
+    it(`should have choose starships button`, () => {
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.dialog__button--starships')
+            .textContent).toContain('starships battle');
+    });
+
     it('should create', () => {
         expect(component).toBeTruthy();
     });

@@ -22,14 +22,18 @@ describe('LoaderComponent', () => {
         fixture.detectChanges();
     });
 
-    it('should render spinner wrapper', () => {
-        const fixture = TestBed.createComponent(LoaderIconComponent);
-        fixture.detectChanges();
+    it('should render loader icon', () => {
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('.lds-double-ring')).toBeTruthy();
+        expect(compiled.querySelector('.loader-icon')).toBeTruthy();
     });
 
-    it('should create', () => {
+    it(`should have as label 'loading'`, () => {
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.text-under')
+            .textContent).toContain('loading');
+    });
+
+    it('should create component', () => {
         expect(component).toBeTruthy();
     });
 });

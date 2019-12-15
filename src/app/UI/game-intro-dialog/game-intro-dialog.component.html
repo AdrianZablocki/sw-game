@@ -2,19 +2,21 @@
 
     <div *ngIf="data.isEndGame; else chooseBattle" class="flex-column">
         <h3 class="winner">{{ data.winner }} win</h3>
-        <button mat-raised-button color="warn" [mat-dialog-close]="data.starshipsResources" class="dialog__button"
-            (click)="reloadGame()">
+        <button mat-raised-button color="warn" [mat-dialog-close]="data.starshipsResources"
+            class="dialog__button dialog__button--again" (click)="reloadGame()">
             play again
         </button>
     </div>
 
     <ng-template #chooseBattle>
         <div class="dialog__header">Choose battle type</div>
-        <button mat-raised-button color="primary" [mat-dialog-close]="data.charactersResources" class="dialog__button">
+        <button mat-raised-button color="primary" [mat-dialog-close]="data.charactersResources"
+            class="dialog__button dialog__button--characters">
             characters battle
         </button>
 
-        <button mat-raised-button color="warn" [mat-dialog-close]="data.starshipsResources" class="dialog__button">
+        <button mat-raised-button color="warn" [mat-dialog-close]="data.starshipsResources"
+            class="dialog__button dialog__button--starships">
             starships battle
         </button>
     </ng-template>

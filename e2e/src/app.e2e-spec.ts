@@ -1,16 +1,16 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
+describe('Star Wars Battle App', () => {
     let page: AppPage;
 
     beforeEach(() => {
         page = new AppPage();
     });
 
-    it('should display welcome message', () => {
+    it('should display get resource button', () => {
         page.navigateTo();
-        expect(page.getTitleText()).toEqual('sw-game app is running!');
+        expect(page.getResourceButtonText()).toEqual('Choose resources');
     });
 
     afterEach(async () => {
