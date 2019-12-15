@@ -22,8 +22,34 @@ describe('GameComponent', () => {
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
+    it('should render player two scores', () => {
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.game-points__pl1')).toBeTruthy();
+    });
 
-    it('should create', () => {
+    it('should render player two scores', () => {
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.game-points__pl2')).toBeTruthy();
+    });
+
+    it('should render game container', () => {
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.game-container')).toBeTruthy();
+    });
+
+    it(`player one scores element should have as label 'Player One:'`, () => {
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.game-points__pl1')
+            .textContent).toContain('Player One:');
+    });
+
+    it(`player two scores element should have as label 'Player Two:'`, () => {
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.game-points__pl2')
+            .textContent).toContain('Player Two:');
+    });
+
+    it('should create component', () => {
         expect(component).toBeTruthy();
     });
 });

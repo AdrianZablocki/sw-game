@@ -38,7 +38,7 @@ describe('GameIntroDialogComponent', () => {
             .textContent).toContain('starships battle');
     });
 
-    it('should create', () => {
+    it('should create component', () => {
         expect(component).toBeTruthy();
     });
 });
