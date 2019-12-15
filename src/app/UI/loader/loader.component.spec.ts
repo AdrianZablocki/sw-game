@@ -22,6 +22,13 @@ describe('LoaderComponent', () => {
         fixture.detectChanges();
     });
 
+    it('should render spinner wrapper', () => {
+        const fixture = TestBed.createComponent(LoaderIconComponent);
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.lds-double-ring')).toBeTruthy();
+    });
+
     it('should create', () => {
         expect(component).toBeTruthy();
     });
