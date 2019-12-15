@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installation
 
-git clone https://github.com/AdrianZablocki/sw-game.git
-cd sw-game
-npm install
+- git clone https://github.com/AdrianZablocki/sw-game.git
+- cd sw-game
+- npm install
 
 ## Development server
 
