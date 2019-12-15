@@ -23,6 +23,11 @@ describe('PlayerComponent', () => {
         fixture.detectChanges();
     });
 
+    it('should render cards container', () => {
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('.player-cards')).toBeTruthy();
+    });
+
     it('should create component', () => {
         expect(component).toBeTruthy();
     });
