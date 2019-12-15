@@ -15,6 +15,7 @@ export class PlayerComponent {
     @Output() public clicked: EventEmitter<IGameType> = new EventEmitter<IGameType>();
     @Input() public cards: ICard[];
     @Input() public isEndGame: boolean;
+    @Input() public isError = false;
 
     public isClicked = false;
     public isSelected = false;

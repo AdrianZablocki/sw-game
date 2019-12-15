@@ -15,11 +15,13 @@
             (roundEnd)="checkWinner()">
 
             <app-player playerOne [player]="'Player One'" [cards]="playerOneCards" [battleType]="choosenBattle"
-                [isEndGame]="roundEnd" (score)="setScore($event)" (clicked)="getCards($event)">
+                [isEndGame]="roundEnd" (score)="setScore($event)" (clicked)="getCards($event)"
+                [isError]="errorPlayerOne">
             </app-player>
 
             <app-player playerTwo [player]="'Player Two'" [cards]="playerTwoCards" [battleType]="choosenBattle"
-                [isEndGame]="roundEnd" (score)="setScore($event)" (clicked)="getCards($event)">
+                [isEndGame]="roundEnd" (score)="setScore($event)" (clicked)="getCards($event)"
+                [isError]="errorPlayerTwo">
             </app-player>
 
         </app-game>

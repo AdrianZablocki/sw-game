@@ -1,7 +1,8 @@
-<button mat-raised-button [color]="player === playerOne ? 'warn' : 'primary'" *ngIf="!isClicked"
+<button *ngIf="!isClicked || isError" mat-raised-button [color]="player === playerOne ? 'warn' : 'primary'"
     (click)="selectCards()">
-    Select cards
+    {{ isError ? 'Upsss... Try again' : 'Select cards' }}
 </button>
+
 
 <div class="flex-column player-cards">
     <div *ngIf="isSelected" class="player-cards__layer"></div>

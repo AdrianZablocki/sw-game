@@ -23,6 +23,8 @@ export class AppComponent {
     public playerOneTotalScore: number;
     public playerTwoTotalScore: number;
     public roundEnd: boolean;
+    public errorPlayerOne = false;
+    public errorPlayerTwo = false;
 
     constructor(
         private dataService: DataService,
@@ -30,18 +32,28 @@ export class AppComponent {
         private changeDetector: ChangeDetectorRef
     ) { }
 
-    private getStarships(player): any {
-        return this.dataService.getStarships().subscribe(cards => {
-            this.setPlayerCards(player, cards);
-            this.markAsFetched();
-        });
+    private getStarships(player: string): any {
+        return this.dataService.getStarships().subscribe(
+            (cards: ICard[]) => {
+                this.setPlayerCards(player, cards);
+                this.markAsFetched();
+            },
+            () => {
+                this.errorHandler(player);
+                this.markAsFetched();
+            });
     }
 
-    private getCharacters(player): any {
-        return this.dataService.getCharacters().subscribe((cards: ICard[]) => {
-            this.setPlayerCards(player, cards);
-            this.markAsFetched();
-        });
+    private getCharacters(player: string): any {
+        return this.dataService.getCharacters().subscribe(
+            (cards: ICard[]) => {
+                this.setPlayerCards(player, cards);
+                this.markAsFetched();
+            },
+            () => {
+                this.errorHandler(player);
+                this.markAsFetched();
+            });
     }
 
     private markAsFetched(): void {
@@ -51,6 +63,10 @@ export class AppComponent {
 
     private setPlayerCards(player: string, cards: ICard[]): void {
         player === Players.PLAYER_ONE ? this.playerOneCards = cards : this.playerTwoCards = cards;
+    }
+
+    private errorHandler(player: string): void {
+        player === Players.PLAYER_ONE ? this.errorPlayerOne = true : this.errorPlayerTwo = true;
     }
 
     public openDialog(): void {
@@ -72,7 +88,7 @@ export class AppComponent {
         });
     }
 
-    public getCards(setings: { type: string, player: string }): void {
+    public getCards(setings: { type: string, player: string }): any {
         this.isLoading = true;
         const cards = {
             characters: () => this.getCharacters(setings.player),
@@ -81,7 +97,7 @@ export class AppComponent {
         return cards[setings.type]();
     }
 
-    public setScore(result: IPlayerResult): void {
+    public setScore(result: IPlayerResult): any {
         const playerScores = {
             'Player One': () => this.playerOneTotalScore = result.score,
             'Player Two': () => this.playerTwoTotalScore = result.score
@@ -91,7 +107,7 @@ export class AppComponent {
 
     public checkWinner(): void {
         if (this.playerOneTotalScore === this.playerTwoTotalScore) {
-            this.winner = 'No one';
+            this.winner = 'Draw';
         } else if (this.playerOneTotalScore > this.playerTwoTotalScore) {
             this.winner = 'Player One';
         } else {
