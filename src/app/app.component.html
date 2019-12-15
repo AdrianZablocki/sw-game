@@ -1,15 +1,14 @@
-<h1 class="flex-column app__title">
-    {{ title }}
-    <div class="app__subtitle">{{ choosenBattle }} battle</div>
-</h1>
+<div class="app__container">
+    <h1 class="flex-column app__title">
+        {{ title }}
+        <div class="app__subtitle">{{ choosenBattle }} battle</div>
+    </h1>
 
-<button *ngIf="!choosenBattle; else choosenResource" class="select-battle" mat-raised-button (click)="openDialog()">
-    Choose resources
-</button>
+    <button *ngIf="!choosenBattle; else choosenResource" class="select-battle" mat-raised-button (click)="openDialog()">
+        Choose resources
+    </button>
 
-<ng-template #choosenResource>
-
-    <div class="game-container">
+    <ng-template #choosenResource>
 
         <app-game [isLoading]="isLoading" [playerOneScore]="playerOneTotalScore" [playerTwoScore]="playerTwoTotalScore"
             (roundEnd)="checkWinner()">
@@ -26,6 +25,5 @@
 
         </app-game>
 
-    </div>
-
-</ng-template>
+    </ng-template>
+</div>
